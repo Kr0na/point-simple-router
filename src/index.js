@@ -137,7 +137,7 @@ export function syncReduxAndRouter(history, store, selectRouterState = SELECT_ST
     }
   })
 
-  const unsubscribeStore = store.subscribe(() => {
+  const unsubscribeStore = store.listen(() => {
     let routing = getRouterState()
 
     // Only trigger history update if this is a new change or the
